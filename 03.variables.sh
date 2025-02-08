@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #declaring of varible
-PERSON1=rakesh#no space between = and value
+PERSON1=rakesh  #no space between = and value
 PERSON2=suresh
 
 #referring variable
