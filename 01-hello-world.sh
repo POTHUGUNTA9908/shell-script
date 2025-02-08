@@ -1,4 +1,5 @@
 #!/bin/bash
 
 
-i am learning devops from linux ditrectory 
+
+echo "hello, i am learning devops"
