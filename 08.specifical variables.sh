@@ -14,3 +14,5 @@ echo " which user is running this script:$USER"
 
 echo "Hostname :$Hostname"
 echo "process id of the current shell script:$$"
+
+echo "process id of last background command :$!"
