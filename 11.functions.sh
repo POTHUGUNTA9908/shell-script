@@ -3,7 +3,9 @@
 USERID=$(id -u)
 
 VALIDATE(){
-    
+    echo "Exit status:$1"
+    echo "what atre you doing:$2"
+
 }
 
 if [ $USERID -ne 0 ]
@@ -24,4 +26,3 @@ dnf install git -y
 VALIDATE $? "Installing My git"
 
 
-echo "is script proceeding?" 
