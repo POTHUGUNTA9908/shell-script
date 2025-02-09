@@ -6,4 +6,4 @@ echo "Number of variables paased:$#"
 
 echo " script name ": $0
 
-echo "current working directory":$pwd
+echo "current working directory:$PWD"
