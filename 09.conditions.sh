@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-Number =$1
+Number= $1
 
 then
 echo "Given number $Number is greater  than 10"
