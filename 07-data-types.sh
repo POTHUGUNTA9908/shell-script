@@ -15,6 +15,7 @@ echo "Total of $No1 and $No2 is: $sum"
 NO1=$1
 NO2=$2
 
-SUM=$(($NO1+$NO2))
+SUb=$(($NO1-$NO2))
 
-echo "Total of $NO1 and $NO2 is: $SUM"
+
+echo "Total of $NO1 AND $NO2 is : $sub"
