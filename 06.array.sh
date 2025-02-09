@@ -1,8 +1,9 @@
 #!/bin/bash
 
 
-Movies=("RRR" "DJTILLU" "MURALI")
+movies = ("rrr" "sairam" "rakesh")
 
-echo "first movie is: ${Movies[0]}"
-echo "first movie is: ${Movies[1]}"
-echo "first movie is:  ${Movies[@]}"
+
+echo "first movies is : ${movies[0]}
+echo "first movies is : ${movies[1]}
+echo "first movies is : ${movies[2]}
