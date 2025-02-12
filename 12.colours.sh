@@ -16,6 +16,7 @@ VALIDATE() {
         exit 1
     else
         echo "$2...$G success $N"
+    fi
 }
 
 if [ $USERID -ne 0 ]
