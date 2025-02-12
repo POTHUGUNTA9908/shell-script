@@ -32,10 +32,10 @@ dnf install mysql -y &>>$LOGFILE
 
 VALIDATE $? "Installing My SQL"
 
-dnf install git -y  &>>$LOGFILE
+dnf install git -y &>>$LOGFILE
 
 VALIDATE $? "Installing My git"
 
-dnf install dockerr -y  &>>$LOGFILE
+dnf install docker -y &>>$LOGFILE
 
-VALIDATE $? "Installing My dockerr"
+VALIDATE $? "Installing My docker"
