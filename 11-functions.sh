@@ -2,7 +2,7 @@
 
 USERID=$(id -u)
 TIMESTAMP=$(date +%F-%H-%M-%S)
-
+SCRIPT_NAME=
 VALIDATE(){
     if [$1 -ne 0]
     then 
