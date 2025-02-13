@@ -9,3 +9,5 @@ then
 else
     echo "You are super user."
 fi
+
+echo "ALL packages:$@"
