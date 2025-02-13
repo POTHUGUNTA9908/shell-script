@@ -1,6 +1,9 @@
 #!/bin/bash
 
 USERID=$(id -u)
+TIMESTAMP=$(date +%F-%H-%M-%S)
+SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
+LOGFILE=/tmp/$SCRIPT_NAME-$TIMESTAMP.log
 
 if [ $USERID -ne 0 ]
 then
@@ -18,6 +21,6 @@ do
     then 
         echo "$i already installed ....skipping"
         else
-            echo "$i not installed... you need to install"
-            fi
+            echo "$i not installed... Need  to install"
+        fi
 done
