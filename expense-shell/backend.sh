@@ -88,6 +88,6 @@ VALIDATE $? "Installing mysql client"
 mysql -h db.daws-78s.xyz  -uroot -p${mysql_root_password}  < /app/schema/backend.sql &>>$LOGFILE
 VALIDATE $?> "Schema loading"
 
-systemctl restart backend &>>$LOGFILE
+systemctl Restart backend &>>$LOGFILE
 VALIDATE $? "Restarting backend"
 
