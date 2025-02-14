@@ -72,6 +72,15 @@ VALIDATE $? "installing node js dependencies"
 cp /home/ec2-user/shell-script/expense-shell/backend.service /etc/systemd/system/backend.service &>>$LOGFILE
 VALIDATE $? "copied backend service"
 
+
+
+dnf install mysql -y &>>$LOGFILE
+VALIDATE $? "Installing MySQL Client"
+
+
+mysql -h db.daws-78s.xyz -uroot -pExpenseApp@1  < /app/schema/backend.sql &>>$LOGFILE
+VALIDATE $? "Schema loading"
+
 systemctl daemon-reload &>>$LOGFILE
 VALIDATE $? "Daemon reload"
 
@@ -81,13 +90,6 @@ VALIDATE $? "Starting backend"
 systemctl enable backend &>>$LOGFILE
 VALIDATE $? "Enabling backend"
 
-dnf install mysql -y &>>$LOGFILE
-VALIDATE $? "Installing MySQL Client"
-
-
-
-mysql -h db.daws-78s.xyz -uroot -pExpenseApp@1  < /app/schema/backend.sql &>>$LOGFILE
-VALIDATE $? "Schema loading"
 
 systemctl Restart backend &>>$LOGFILE
 VALIDATE $? "Restarting backend"
