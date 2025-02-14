@@ -47,26 +47,5 @@ then
     VALIDATE $? "creating expense user"
 else
     echo -e "Expense user already created ...$Y skipping $N"
+fi
 
-
-mkdir -p /app
-VALIDATE $? "creating /app directory"
-
-
-curl -o /tmp/backend.zip https://expense-builds.s3.us-east-1.amazonaws.com/expense-backend-v2.zip
-VALIDATE $? "Downloading backend code"
-
-
-cd /app
-unzip /tmp/backend.zip
-VALIDATE $? "Extracting backend code"
-
-npm install
-VALIDATE $? "installing node js dependicies"
-
-systemctl daemon-reload
-
-systemctl start backend
-
-
-systemctl enable backend
