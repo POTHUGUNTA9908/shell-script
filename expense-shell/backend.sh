@@ -82,7 +82,7 @@ systemctl enable backend &>>$LOGFILE
 VALIDATE $? "Enabling backend"
 
 dnf install mysql -y &>>$LOGFILE
-VALIDATE $? "Installing mysql client"
+VALIDATE $? "Installing MySQL Client"
 
 
 mysql -h db.daws-78s.xyz  -uroot -p${mysql_root_password}  < /app/schema/backend.sql &>>$LOGFILE
