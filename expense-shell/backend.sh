@@ -85,7 +85,7 @@ dnf install mysql -y &>>$LOGFILE
 VALIDATE $? "installing mysql"
 
 
-mysql -h <db.daws-78s.xyz> -u root -p${mysql_root_password}  < /app/schema/backend.sql &>>$LOGFILE
+mysql -h  db.daws-78s.xyz  -u root -p${mysql_root_password}  < /app/schema/backend.sql &>>$LOGFILE
 VALIDATE $?> "Schema loading"
 
 systemctl restart backend &>>$LOGFILE
