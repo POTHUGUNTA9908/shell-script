@@ -27,21 +27,21 @@ VALIDATE() {
 
 if [ $USERID -ne 0 ]
 then 
-    echo "please run this script with root access"
+    echo "please run this script with root access."
     exit 1
 else 
-    echo "you are super user"
+    echo "you are super user."
 fi
 
 dnf module disable nodejs -y  &>>$LOGFILE
-VALIDATE $? "disabling default nodejs"
+VALIDATE $? "Disabling default nodejs"
 
 
 dnf module enable nodejs:20 -y &>>$LOGFILE
-VALIDATE $? "enabling  nodejs:20 version"
+VALIDATE $? "Enabling  nodejs:20 version"
 
 dnf install nodejs -y &>>$LOGFILE
-VALIDATE $? "installing nodejs "
+VALIDATE $? "Installing nodejs "
 
 id expense &>>$LOGFILE
  if [ $? -ne 0 ]
@@ -58,8 +58,9 @@ VALIDATE $? "creating /app directory"
 curl -o /tmp/backend.zip https://expense-builds.s3.us-east-1.amazonaws.com/expense-backend-v2.zip &>>$LOGFILE
 VALIDATE $? "downloading  backend code"
 
-cd /app &>>$LOGFILE
-unzip /tmp/backend.zip
+cd /app 
+rm -rf /app/*
+unzip /tmp/backend.zip &>>$LOGFILE
 VALIDATE $? "Extracting backend code"
 
 
@@ -72,21 +73,21 @@ cp /home/ec2-user/shell-script/expense-shell/backend.service /etc/systemd/system
 VALIDATE $? "copied backend service"
 
 systemctl daemon-reload &>>$LOGFILE
-VALIDATE $? "daemon reload"
+VALIDATE $? "Daemon reload"
 
 systemctl start backend &>>$LOGFILE
-VALIDATE $? "starting backend"
+VALIDATE $? "Starting backend"
 
 systemctl enable backend &>>$LOGFILE
-VALIDATE $? "enabling backend"
+VALIDATE $? "Enabling backend"
 
 dnf install mysql -y &>>$LOGFILE
-VALIDATE $? "installing mysql"
+VALIDATE $? "Installing mysql client"
 
 
-mysql -h  db.daws-78s.xyz  -u root -p${mysql_root_password}  < /app/schema/backend.sql &>>$LOGFILE
+mysql -h db.daws-78s.xyz  -uroot -p${mysql_root_password}  < /app/schema/backend.sql &>>$LOGFILE
 VALIDATE $?> "Schema loading"
 
 systemctl restart backend &>>$LOGFILE
-VALIDATE $? "restarting backend"
+VALIDATE $? "Restarting backend"
 
