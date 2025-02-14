@@ -153,7 +153,7 @@ npm install &>>$LOG_FILE
 # load the data before running backend
 dnf install mysql -y &>>$LOG_FILE
 VALIDATE $? "Installing MySQL Client"
-mysql -h 172.31.95.188 -uroot -pExpenseApp@1 < /app/schema/backend.sql &>>$LOG_FILE  #here mysql ip address or domain of mysql name
+mysql -h db.daws-78s.xyz -uroot -pExpenseApp@1 < /app/schema/backend.sql &>>$LOG_FILE  #here mysql ip address or domain of mysql name
 VALIDATE $? "Schema loading"
 systemctl daemon-reload &>>$LOG_FILE
 VALIDATE $? "Daemon reload"
