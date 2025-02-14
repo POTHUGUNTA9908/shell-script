@@ -10,8 +10,8 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
-echo "please enter DB password"
-read -s mysql_root_password
+# echo "please enter DB password"
+# read -s mysql_root_password
 
 VALIDATE() {
 
@@ -85,8 +85,8 @@ dnf install mysql -y &>>$LOGFILE
 VALIDATE $? "Installing MySQL Client"
 
 
-mysql -h db.daws-78s.xyz  -uroot -p${mysql_root_password}  < /app/schema/backend.sql &>>$LOGFILE
-VALIDATE $?> "Schema loading"
+mysql -h db.daws-78s.xyz  -uroot -pExpenseApp@1 < /app/schema/backend.sql &>>$LOGFILE
+VALIDATE $? "Schema loading"
 
 systemctl Restart backend &>>$LOGFILE
 VALIDATE $? "Restarting backend"
