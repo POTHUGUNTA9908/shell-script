@@ -44,7 +44,7 @@ VALIDATE $? "starting mysql server"
 
 mysql_secure_installation --set-root-pass ExpenseApp@1 &>>$LOGFILE
 
-if [ $? -ne 0]
+if [ $? -ne 0 ]
 then 
     mysql_secure_installation --set-root-pass ExpenseApp@1 &>>$LOGFILE
     VALIDATE $? "setting up root root password"
