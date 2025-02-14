@@ -85,7 +85,8 @@ dnf install mysql -y &>>$LOGFILE
 VALIDATE $? "Installing MySQL Client"
 
 
-mysql -h db.daws-78s.xyz -uroot -pExpenseApp@1 < /app/schema/backend.sql &>>$LOGFILE
+
+mysql -h db.daws78s.xyz -uroot -pExpenseApp@1  < /app/schema/backend.sql &>>$LOGFILE
 VALIDATE $? "Schema loading"
 
 systemctl Restart backend &>>$LOGFILE
