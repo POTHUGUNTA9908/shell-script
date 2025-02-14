@@ -69,9 +69,8 @@ npm install &>>$LOGFILE
 VALIDATE $? "installing node js dependencies"
 
 
-cp /home/ec2-user/expense-shell/backend.service /etc/systemd/system/backend.service &>>$LOGFILE
-VALIDATE $? "Copied backend service"
-
+cp /home/ec2-user/shell-script/expense-shell/backend.service /etc/systemd/system/backend.service &>>$LOGFILE
+VALIDATE $? "copied backend service"
 
 systemctl daemon-reload &>>$LOGFILE
 VALIDATE $? "daemon reload"
