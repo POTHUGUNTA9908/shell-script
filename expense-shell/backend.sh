@@ -30,7 +30,7 @@ else
     echo "you are super user"
 fi
 
-dnf module disable nodejs  &>>$LOGFILE
+dnf module disable nodejs -y  &>>$LOGFILE
 VALIDATE $? "disabling default nodejs"
 
 
