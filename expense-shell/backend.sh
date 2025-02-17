@@ -168,6 +168,10 @@ R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
+
+echo "please enter DB password"
+read -s mysql_root_password
+
 Log_folder="/var/log/expense-logs"
 [ ! -d "$Log_folder" ] && mkdir -p "$Log_folder"
 logfile=$(basename $0 | cut -d "." -f 1)
@@ -220,7 +224,7 @@ validate $? "installing dependencies nodejs modules"
 #preparing mysql schema
 dnf install mysql -y &>>$logfilename
 validate $? "installing mysql client"
-mysql -h db.daws-78s.xyz -uroot -pExpenseApp@1 < /app/schema/backend.sql &>>$logfilename
+mysql -h db.daws-78s.xyz -uroot -p${mysql_root_password} < /app/schema/backend.sql &>>$LOGFILE
 validate $? "setting up the transaction schema and tables"
 systemctl daemon-reload &>>$logfilename
 validate $? "reloading daemon"
