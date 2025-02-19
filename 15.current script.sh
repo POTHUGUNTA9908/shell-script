@@ -3,7 +3,7 @@
 
 #!/bin/bash
 
-course ="Devops from current script"
+course="Devops from current script"
 
 echo "before calling other script,course:$course"
 
