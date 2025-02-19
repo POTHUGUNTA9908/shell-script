@@ -9,7 +9,7 @@ echo "before calling other script,course:$course"
 
 echo "process id of current shell script : $$"
 
-# ./16.otherscript.sh
+./16.otherscript.sh
 
 
 echo "after calling other script,course:$course"
