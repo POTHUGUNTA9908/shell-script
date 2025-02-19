@@ -1,7 +1,7 @@
 
 #!/bin/bash
 
-course ="Devops from otherscript"
+course="Devops from otherscript"
 
 echo "variable value from otherscript:$course"
 
