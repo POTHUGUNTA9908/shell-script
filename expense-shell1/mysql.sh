@@ -6,7 +6,7 @@ check_root
 
 
 echo "please enter DB password"
-read  mysql_root_password
+read mysql_root_password
 
 dnf install mysql-server -y &>>$LOGFILE
 VALIDATE $? "installing mysql server"
