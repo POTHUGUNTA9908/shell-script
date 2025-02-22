@@ -1,6 +1,6 @@
 #!/bin/bash
 
-course= "Devops from present script"
+course="Devops from present script"
 
 echo "before calling  present script ; course : $course"
 
