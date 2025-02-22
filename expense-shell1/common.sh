@@ -10,8 +10,6 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
-# echo "please enter DB password"
-# read -s mysql_root_password
 
 VALIDATE() {
 
@@ -26,7 +24,7 @@ VALIDATE() {
 }
 
 check_root(){
-if [ $USERID -ne 0 ]
+    if [ $USERID -ne 0 ]
 then 
     echo "please run this script with root access."
     exit 1
@@ -34,3 +32,5 @@ else
     echo "you are super user."
 fi
 }
+
+
