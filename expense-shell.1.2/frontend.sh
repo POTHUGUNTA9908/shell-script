@@ -1,5 +1,15 @@
 # #!/bin/bash
 
+
+
+source ./common.sh
+
+check_root
+
+
+echo "please enter DB password"
+read mysql_root_password
+
 dnf install nginx -y &>>$LOGFILE
 VALIDATE $? "Installing nginx"
 
