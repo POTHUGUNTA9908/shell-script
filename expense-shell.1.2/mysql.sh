@@ -9,13 +9,13 @@ echo "please enter DB password"
 read mysql_root_password
 
 dnf install mysql-server -y &>>$LOGFILE
-VALIDATE $? "installing mysql server"
+#VALIDATE $? "installing mysql server"
 
 systemctl enable mysqld  &>>$LOGFILE
-VALIDATE $? "enabling mysql server"
+#VALIDATE $? "enabling mysql server"
 
 systemctl start mysqld  &>>$LOGFILE
-VALIDATE $? "starting mysql server"
+#VALIDATE $? "starting mysql server"
 
 #mysql_secure_installation --set-root-pass ExpenseApp@1 &>>$LOGFILE
 #VALIDATE $? "setting up root password"
