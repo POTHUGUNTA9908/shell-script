@@ -11,6 +11,6 @@ Y="\e[33m"
 if [ -d "$source_directory" ]
   echo -e"$G source_directory exist $N"
 else 
-  echo -e"$R please make sure $source_directory exist $N"
+  echo "$R please make sure $source_directory exist $N"
    exit 1
 fi
