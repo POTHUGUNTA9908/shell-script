@@ -10,8 +10,8 @@
 
  if [ -d "$source_directory" ]
    echo -e"$G source directory exists $N"
-else 
-  echo -e "$R please make sure $source_directory exists $N"
+  else 
+   echo -e "$R please make sure $source_directory exists $N"
    exit 1
  fi
 
