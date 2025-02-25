@@ -18,3 +18,10 @@
 
 FILES=$(find . -name "*.log" -mtime +14)
 echo "FILES to delete : $FILES"
+
+While 
+do
+   echo "Deleting file : $line"
+   rm -rf $line
+
+done <<$FILES
