@@ -16,8 +16,8 @@
    exit 1
  fi
 
-FILES=$(find . -name "*.log" -mtime +14)
-echo "FILES to delete : $FILES"
+FILES=$(find $source_directory -name "*.log" -mtime +14)
+
 
 While IFS= read -r line
 do
