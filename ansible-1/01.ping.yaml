@@ -1,3 +1,4 @@
+
 - name: ping the server
   hosts: web
   tasks:
